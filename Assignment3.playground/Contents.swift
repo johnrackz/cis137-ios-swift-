@@ -63,13 +63,13 @@ let k2f: (Int) -> Double = { kelvin in
 }
 
 let tempInK = convertTemperature(25, using: c2k)  // 25C to K
-print("25°C = \(tempInK) K")
+print("25C = \(tempInK) K")
 
 let kelvinToC = convertTemperature(300, using: k2c)  // 300 K to C
-print("300 K = \(kelvinToC) °C")
+print("300 K = \(kelvinToC) C")
 
 let fToK = convertTemperature(50, using: f2k)  // 50F to K
-print("50°F = \(fToK) K")
+print("50F = \(fToK) K")
 
 let kToF = convertTemperature(310, using: k2f)  // 310 K to F
 print("310 K = \(kToF) F")
