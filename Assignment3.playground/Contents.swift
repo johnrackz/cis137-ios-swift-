@@ -17,11 +17,11 @@ let f2c: (Int) -> Double = { fahrenheit in
     (Double(fahrenheit) - 32) * 5 / 9
 }
 
-let fahrenheit = c2f(25)
-print("25C is \(fahrenheit)F")
+let fahrenheit = c2f(30)
+print("30C is \(fahrenheit)F")
 
-let celsius = f2c(77)
-print("77F is \(celsius)C")
+let celsius = f2c(95)
+print("95F is \(celsius)C")
 
 
 //: ## Higher-order function
@@ -33,11 +33,11 @@ func convertTemperature(_ temperature: Int, using converter: (Int) -> Double) ->
     return converter(temperature)
 }
 
-let tempInF = convertTemperature(25, using: c2f)  // 25C to F
-print("25C = \(tempInF)F")
+let tempInF = convertTemperature(40, using: c2f)  // 40C to F
+print("40C = \(tempInF)F")
 
-let tempInC = convertTemperature(77, using: f2c)  // 77F to C
-print("77F = \(tempInC)C")
+let tempInC = convertTemperature(68, using: f2c)  // 68F to C
+print("68F = \(tempInC)C")
 
 
 //: ## Another unit - Kelvin
@@ -62,14 +62,14 @@ let k2f: (Int) -> Double = { kelvin in
     (Double(kelvin) - 273.15) * 9 / 5 + 32
 }
 
-let tempInK = convertTemperature(0, using: c2k)  // 0C to K
-print("0°C = \(tempInK) K")
+let tempInK = convertTemperature(25, using: c2k)  // 25C to K
+print("25°C = \(tempInK) K")
 
-let kelvinToC = convertTemperature(273, using: k2c)  // 273 K to C
-print("273 K = \(kelvinToC) °C")
+let kelvinToC = convertTemperature(300, using: k2c)  // 300 K to C
+print("300 K = \(kelvinToC) °C")
 
-let fToK = convertTemperature(32, using: f2k)  // 32F to K
-print("32°F = \(fToK) K")
+let fToK = convertTemperature(50, using: f2k)  // 50F to K
+print("50°F = \(fToK) K")
 
-let kToF = convertTemperature(300, using: k2f)  // 300 K to F
-print("300 K = \(kToF) F")
+let kToF = convertTemperature(310, using: k2f)  // 310 K to F
+print("310 K = \(kToF) F")
