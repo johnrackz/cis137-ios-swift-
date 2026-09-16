@@ -62,6 +62,15 @@ let blank = Student(firstName: "", lastName: "john")
 print("blank.firstName: \(blank.firstName)")
 print("blank.lastName: \(blank.lastName)")
 
-// NonEmpty rejects "" in the setter and keeps the old value, so firstName stayed "john"
-// and lastName stayed "Garcia" after the empty assignments. An empty name at creation
-// falls back to "Unknown". No crash, just a printed warning.
+/*
+ How my property wrapper handles it:
+ The behavior I defined is that NonEmpty refuses to store an empty string.
+ If you try to set firstName or lastName to "", the setter ignores it,
+ keeps the old value, and prints a warning so you know it was rejected.
+
+ What happened in my tests:
+ I set student.firstName = "" and it stayed "john". I set student.lastName = ""
+ and it stayed "Garcia". Nothing crashed, it just printed the warning.
+ When I created a student with an empty first name, there was no old value
+ to keep, so the wrapper used "Unknown" instead.
+ */
