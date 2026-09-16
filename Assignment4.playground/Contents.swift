@@ -62,23 +62,6 @@ let blank = Student(firstName: "", lastName: "john")
 print("blank.firstName: \(blank.firstName)")
 print("blank.lastName: \(blank.lastName)")
 
-/*
- For this assignment I defined a property wrapper called NonEmpty that
- stops a String property from ever being set to "". If I try to assign
- an empty string, the setter just keeps whatever value was already there
- and prints a warning instead of crashing or silently storing "".
-
- In my tests, setting student.firstName = "" left it as "john", and
- setting student.lastName = "" left it as "Garcia" - both printed a
- warning but nothing broke. When I made a new Student with an empty
- firstName ("", "john"), the wrapper had nothing valid to fall back on
- yet, so init used the default "Unknown" instead.
-
- I like this approach because the property can never actually hold "",
- there's no crash, and I still get a printed warning so I know the
- empty assignment was rejected instead of it failing silently.
-
- Behind the scenes, firstName and lastName are really stored as
- _firstName and _lastName, which are instances of the NonEmpty wrapper
- itself - that's where the real value and the rejection logic live.
- */
+// NonEmpty rejects "" in the setter and keeps the old value, so firstName stayed "john"
+// and lastName stayed "Garcia" after the empty assignments. An empty name at creation
+// falls back to "Unknown". No crash, just a printed warning.
