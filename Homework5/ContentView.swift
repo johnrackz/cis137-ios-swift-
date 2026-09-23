@@ -1,17 +1,9 @@
-//
-//  ContentView.swift
-//  Homework5
-//
-//  Assignment: 5
-//  Angel Garcia
-//  9/22/2026
-//
+
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        // VStack = stacks its views top to bottom
         VStack(spacing: 20) {
             // my name, styled with a bigger rounded bold font and a color gradient
             Text("Angel Garcia")

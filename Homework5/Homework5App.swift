@@ -1,7 +1,3 @@
-//
-//  Homework5App.swift
-//  Homework5
-//
 //  Assignment: 5
 //  Angel Garcia
 //  9/22/2026
