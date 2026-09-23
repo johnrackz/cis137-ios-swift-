@@ -1,6 +1,6 @@
 //
-//  Homework5_sampleApp.swift
-//  Homework5 sample
+//  Homework5App.swift
+//  Homework5
 //
 //  Assignment: 5
 //  Angel Garcia
@@ -10,7 +10,7 @@
 import SwiftUI
 
 @main
-struct Homework5_sampleApp: App {
+struct Homework5App: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

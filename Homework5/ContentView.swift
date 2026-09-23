@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  Homework5 sample
+//  Homework5
 //
 //  Assignment: 5
 //  Angel Garcia
@@ -22,11 +22,11 @@ struct ContentView: View {
                 .shadow(color: .gray.opacity(0.4), radius: 3, x: 2, y: 2)
 
             // image from Assets.xcassets, name in quotes without the extension
-            Image("penguin")
+            Image("me")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 200, height: 200)
-                .clipShape(Circle())
+                .frame(height: 400)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
         }
         .padding()
     }
